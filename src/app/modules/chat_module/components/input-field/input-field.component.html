@@ -1,0 +1,36 @@
+<div class="text-md font-medium px-2 py-3">
+  <div
+    class="relative has-[:focus]:border-opacity-30 px-1 py-1 border border-white border-opacity-15 group rounded-2xl max-w-[61%] mx-auto flex"
+  >
+    <textarea
+      [formControl]="input"
+      placeholder="Mensaje ChatGPT..."
+      rows="1"
+      (input)="countLines($event)"
+      [style.height]="52"
+      class="py-2 px-3 focus:outline-none w-full bg-transparent resize-none overflow-hidden min-h-11 max-h-[200px]"
+    ></textarea>
+    <div class="flex flex-col justify-end">
+      <button
+        class="h-10 w-10 mb-[2px] enabled:bg-white enabled:bg-opacity-90 disabled:bg-[var(--color-primary)] disabled:bg-opacity-100 rounded-xl p-[6px] border border-black border-opacity-20 disabled:text-[var(--color-primary)]"
+        [disabled]="!input.valid"
+      >
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          class="text-white dark:text-black"
+        >
+          <path
+            d="M7 11L12 6L17 11M12 18V7"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>

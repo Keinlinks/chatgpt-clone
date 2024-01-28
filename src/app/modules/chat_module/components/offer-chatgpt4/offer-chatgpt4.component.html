@@ -1,0 +1,22 @@
+<div
+  class="flex flex-col bg-[var(--color-bg-popup)] w-[340px] rounded-md px-[5px] py-2 text-sm relative gap-[2px]"
+>
+  <app-list-item
+    [muted_text]="'Ideal para tareas cotidianas.'"
+    [title]="'ChatGPT 3.5'"
+    [id]="'chatgpt3'"
+    [svg]="0"
+    [option]="form.value"
+    (radioChange)="updateRadio($event)"
+  ></app-list-item>
+  <app-list-item
+    [option]="form.value"
+    [svg]="1"
+    [muted_text]="
+      'Nuestro modelo más inteligente y capaz. Incluye DALL-E, navegación y más.'
+    "
+    [title]="'ChatGPT 4'"
+    [id]="'chatgpt4'"
+    (radioChange)="updateRadio($event)"
+  ></app-list-item>
+</div>

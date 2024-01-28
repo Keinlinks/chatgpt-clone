@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #40414f;
+  --color-secondary: #c5c5d2;
+  --color-bg-popup: #202123;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto, Söhne, ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Ubuntu, Cantarell, "Noto Sans", sans-serif;
+  font-size: 16px;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+body.dark-theme {
+  background-color: #343541;
+  color: white;
+}
+
+.hover-color-background {
+  background-color: #40414f;
+}

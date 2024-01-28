@@ -1,0 +1,29 @@
+<div
+  class="font-semibold cursor-pointer group hover:bg-zinc-500 hover:bg-opacity-30 flex flex-col px-3 py-4 text-sm border border-white border-opacity-15 rounded-xl relative"
+>
+  <div>{{ data.title }}</div>
+  <p class="text-[var(--color-secondary)] text-xs">
+    {{ data.p }}
+  </p>
+  <div class="absolute right-0">
+    <div
+      class="shadow my-auto rounded-lg p-1 z-30 bg-[var(--color-bg-popup)] hidden scale-90 mr-4 group-hover:block"
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        class="icon-sm text-token-text-primary my-auto"
+      >
+        <path
+          d="M7 11L12 6L17 11M12 18V7"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
+    </div>
+  </div>
+</div>
