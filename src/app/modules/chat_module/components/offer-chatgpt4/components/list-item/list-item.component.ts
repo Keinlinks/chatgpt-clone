@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChatStateService } from 'src/app/services/chatState.service';
 
 @Component({
   selector: 'app-list-item',

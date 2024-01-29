@@ -1,5 +1,8 @@
 <nav class="flex p-[1rem] align-middle gap-3">
-  <div class="border-white border border-opacity-50 rounded-lg h-full">
+  <div
+    class="border-white border border-opacity-50 rounded-lg h-full"
+    [style.display]="isSideBarOpen ? 'block':'none'"
+  >
     <div
       class="border-white p-2 rounded-lg hover:bg-zinc-500 hover:bg-opacity-40 cursor-pointer"
     >
@@ -27,7 +30,7 @@
     >
       <h4 class="">ChatGPT</h4>
       <span class="text-[var(--color-secondary)] text-opacity-90 font-bold"
-        >3.5</span
+        >{{chatVersion=='chatgpt3' ? '3.5':'4.0'}}</span
       >
       <div class="flex flex-col justify-center">
         <svg

@@ -1,4 +1,4 @@
-<div class="text-md font-medium px-2 py-3">
+<div class="text-md font-normal px-2 py-3">
   <div
     class="relative has-[:focus]:border-opacity-30 px-1 py-1 border border-white border-opacity-15 group rounded-2xl max-w-[61%] mx-auto flex"
   >
@@ -12,7 +12,7 @@
     ></textarea>
     <div class="flex flex-col justify-end">
       <button
-        class="h-10 w-10 mb-[2px] enabled:bg-white enabled:bg-opacity-90 disabled:bg-[var(--color-primary)] disabled:bg-opacity-100 rounded-xl p-[6px] border border-black border-opacity-20 disabled:text-[var(--color-primary)]"
+        class="group/button relative h-10 w-10 mb-[2px] enabled:bg-white enabled:bg-opacity-90 disabled:bg-[var(--color-primary)] disabled:bg-opacity-100 rounded-xl p-[6px] border border-black border-opacity-20 disabled:text-[var(--color-primary)]"
         [disabled]="!input.valid"
       >
         <svg
@@ -30,6 +30,11 @@
             stroke-linejoin="round"
           ></path>
         </svg>
+        <div
+          class="bg-black text-white hidden group-hover/button:block absolute top-[-2.7rem] left-[-2.4rem] w-[110px] p-1 rounded-lg after:absolute after:bg-black after:bottom-[-2px] after:left-[53px] after:w-2 after:h-2 after:rotate-45"
+        >
+          Send message
+        </div>
       </button>
     </div>
   </div>

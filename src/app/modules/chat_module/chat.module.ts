@@ -37,6 +37,6 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
   ],
-  exports: [],
+  exports: [ChatContainer],
 })
 export class ChatModule {}

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { ChatStateService } from 'src/app/services/chatState.service';
 
 @Component({
   selector: 'app-offer-chatgpt4',
@@ -9,7 +10,13 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class OfferChatgpt4Component {
   form: FormControl = new FormControl('chatgpt3');
 
+  constructor(private chatService: ChatStateService) {
+    chatService.getChatSelector().subscribe((value) => {
+      this.form.setValue(value);
+    });
+  }
+
   updateRadio(value: string) {
-    this.form.setValue(value);
+    this.chatService.setChatSelector(value);
   }
 }

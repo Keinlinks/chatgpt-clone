@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
+import { SideBarService } from 'src/app/services/sideBar.service';
 
 @Component({
   selector: 'app-chat-container',
-  template: `<div class="flex flex-col h-full">
+
+  template: `<div class="flex flex-col h-full relative">
     <app-header />
-    <div class="basis-[100%] relative">
+
+    <div class="flex-1 relative">
       <app-no-chat-screen />
     </div>
     <app-examples-prompts />
