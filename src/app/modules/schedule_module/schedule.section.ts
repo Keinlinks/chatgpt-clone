@@ -5,7 +5,9 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ScheduleList } from 'src/app/models/message.model';
+import { ScheduleService } from 'src/app/services/schedule.service';
 import { SideBarService } from 'src/app/services/sideBar.service';
 
 @Component({
@@ -14,14 +16,10 @@ import { SideBarService } from 'src/app/services/sideBar.service';
     class="flex-col flex px-3 bg-black overflow-x-hidden gap-5 w-[260px] overflow-hidden hover:overflow-y-auto h-screen customScroll"
     [@openCloseAnimation]="stateSidebar"
   >
-    <div
-      (click)="toggleEstado()"
-      class="sticky left-0 pt-5 top-0 bg-black z-50"
-    >
+    <div class="sticky left-0 pt-5 top-0 bg-black z-50">
       <app-schedule-header />
     </div>
-    <app-list-schedule [dateInfo]="'Today'" />
-    <app-list-schedule [dateInfo]="'Yesterday'" />
+    <app-list-schedule [item_list]="infoSchedule" [dateInfo]="'Today'" />
   </div> `,
   animations: [
     trigger('openCloseAnimation', [
@@ -45,9 +43,12 @@ import { SideBarService } from 'src/app/services/sideBar.service';
 })
 export class ScheduleContainer implements OnInit {
   stateSidebar: string = 'open';
-  constructor(private sideBar: SideBarService) {}
-  toggleEstado() {
-    console.log(this.stateSidebar);
+  infoSchedule: ScheduleList[] = [];
+  constructor(
+    private sideBar: SideBarService,
+    private schedule: ScheduleService
+  ) {}
+  toggleState() {
     this.stateSidebar = this.stateSidebar === 'close' ? 'open' : 'close';
   }
   ngOnInit(): void {
@@ -57,6 +58,9 @@ export class ScheduleContainer implements OnInit {
       } else {
         this.stateSidebar = 'close';
       }
+    });
+    this.schedule.getSchedule().subscribe((r) => {
+      this.infoSchedule = r;
     });
   }
 }

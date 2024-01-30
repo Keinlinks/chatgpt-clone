@@ -11,6 +11,9 @@ import { OfferChatgpt4Component } from './components/offer-chatgpt4/offer-chatgp
 import { ListItemComponent } from './components/offer-chatgpt4/components/list-item/list-item.component';
 import { ExamplesPromptsComponent } from './components/examples-prompts/examples-prompts.component';
 import { ExamplesComponent } from './components/examples-prompts/components/examples/examples.component';
+import { MessageComponent } from './components/chat-screen/components/message';
+import { ChatComponent } from './components/chat-screen/chat';
+import { IconChatGPT } from './components/chat-screen/components/gpt_icon';
 
 const routes: Routes = [
   {
@@ -30,6 +33,9 @@ const routes: Routes = [
     ListItemComponent,
     ExamplesPromptsComponent,
     ExamplesComponent,
+    MessageComponent,
+    ChatComponent,
+    IconChatGPT,
   ],
   imports: [
     CommonModule,

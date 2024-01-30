@@ -1,8 +1,9 @@
 <div
+  (click)="changeChat()"
   class="flex rounded-lg items-center px-2 py-2 hover:bg-white hover:bg-opacity-25 gap-3 cursor-pointer group relative"
 >
   <div class="text-sm mt-1 whitespace-nowrap grow overflow-hidden">
-    {{text}}
+    {{info.title}}
   </div>
   <div
     class="h-10 w-12 absolute right-0 bg-gradient-to-l to-transparent from-black from-40% z-10 group-hover:to-80% group-hover:w-32"

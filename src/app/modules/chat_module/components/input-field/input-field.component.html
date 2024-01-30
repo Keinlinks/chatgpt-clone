@@ -1,8 +1,9 @@
-<div class="text-md font-normal px-2 py-3">
+<form class="text-md font-normal px-2 pb-3">
   <div
     class="relative has-[:focus]:border-opacity-30 px-1 py-1 border border-white border-opacity-15 group rounded-2xl max-w-[61%] mx-auto flex"
   >
     <textarea
+      (keydown.enter)="sendMessage($event)"
       [formControl]="input"
       placeholder="Mensaje ChatGPT..."
       rows="1"
@@ -12,6 +13,8 @@
     ></textarea>
     <div class="flex flex-col justify-end">
       <button
+        (click)="sendMessage($event)"
+        type="submit"
         class="group/button relative h-10 w-10 mb-[2px] enabled:bg-white enabled:bg-opacity-90 disabled:bg-[var(--color-primary)] disabled:bg-opacity-100 rounded-xl p-[6px] border border-black border-opacity-20 disabled:text-[var(--color-primary)]"
         [disabled]="!input.valid"
       >
@@ -38,4 +41,4 @@
       </button>
     </div>
   </div>
-</div>
+</form>
