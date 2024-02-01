@@ -14,7 +14,6 @@ import { ChatStateService } from 'src/app/services/chatState.service';
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.html',
-  styleUrls: ['../../../../share/components/scrollBar.css'],
   changeDetection: ChangeDetectionStrategy.Default,
 })
 export class ChatComponent implements OnInit {
