@@ -28,9 +28,9 @@ export class ChatStateService {
     return this.currentChatMessages.asObservable();
   }
   setNewMessage(newMessage: MessagePayload) {
-    let chati = this.currentChatMessages.getValue();
-    chati.messages.push(newMessage);
-    this.currentChatMessages.next(chati);
+    let chat = this.currentChatMessages.getValue();
+    chat.messages.push(newMessage);
+    this.currentChatMessages.next(chat);
   }
 
   changeChat(id: number) {
